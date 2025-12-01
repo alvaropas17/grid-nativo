@@ -30,7 +30,7 @@ body {
     border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
-    transition: all var(--transition-base);
+    /* transition: all var(--transition-base); */
     overflow: hidden;
     position: relative;
 
@@ -39,9 +39,9 @@ body {
         box-shadow: var(--shadow-xl);
         border-color: var(--color-primary);
 
-        & img {
+        /* & img {
             transform: scale(1.05);
-        }
+        } */
     }
 
     /* Elementos comunes */
@@ -187,7 +187,7 @@ body {
    =================================================================== */
 .bento-performance {
     .gaming-tag {
-        background: rgba(var(--color-gaming), 0.1);
+        /* background: rgba(var(--color-gaming), 0.1); */   
         color: var(--color-gaming);
         border-color: rgba(var(--color-gaming), 0.2);
     }
