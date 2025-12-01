@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Móviles Destacados - Análisis Bento</title>
+    <!-- Carga de Tailwind CSS para utilidades base y fuentes -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <link rel="stylesheet" href="./css/root.css">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/grid-layout.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABECERA MEJORADA -->
+    <header class="header-container">
+        <div class="header-content">
+            <div class="header-text">
+                <h1 class="header-title">
+                    <span class="title-gradient">Smartphones 2024</span>
+                    <span class="title-subtitle">Análisis Bento</span>
+                </h1>
+                <p class="header-description">
+                    Descubre el smartphone perfecto para tu estilo de vida con nuestro análisis comparativo interactivo.
+                </p>
+            </div>
+
+            <!-- Botón de Modo Claro/Oscuro Mejorado -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                <div class="toggle-track">
+                    <div class="toggle-thumb">
+                        <!-- Icono Sol -->
+                        <svg id="sun-icon" class="toggle-icon sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <!-- Icono Luna -->
+                        <svg id="moon-icon" class="toggle-icon moon-icon hidden" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </div>
+                </div>
+                <span class="toggle-label">Modo Oscuro</span>
+            </button>
+        </div>
+
+        <!-- Indicador de progreso de scroll -->
+        <div class="scroll-progress">
+            <div class="scroll-progress-bar"></div>
+        </div>
+    </header>
+
+    <!-- CUERPO PRINCIPAL - BENTO GRID COMPLEJO -->
+    <main class="bento-grid">
+
+        <!-- SECCIÓN HERO: Mejor Cámara (Grid anidado complejo) -->
+        <section class="bento-item bento-hero-camera">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="category-tag">📸 FOTOGRAFÍA</span>
+                    <h2>El Maestro de la Imagen</h2>
+                    <p>Sistema de cámaras revolucionario con IA computacional avanzada. Tres sensores profesionales que
+                        capturan cada momento con precisión cinematográfica.</p>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <strong>50MP</strong>
+                            <span>Principal</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>12MP</strong>
+                            <span>Ultra Angular</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>48MP</strong>
+                            <span>Teleobjetivo</span>
+                        </div>
+                        <div class="spec-item spec-highlight">
+                            <strong>5x</strong>
+                            <span>Zoom Óptico</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=400&fit=crop&crop=center"
+                        alt="Smartphone profesional mostrando sistema de cámaras">
+                    <div class="visual-overlay">
+                        <div class="feature-badge">Pixel Pro 9</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PERFORMANCE: Gaming + Batería (Grid anidado vertical) -->
+        <section class="bento-item bento-performance">
+            <div class="performance-grid">
+                <div class="performance-gaming">
+                    <div class="gaming-header">
+                        <span class="category-tag gaming-tag">🎮 GAMING</span>
+                        <h3>Potencia Extrema</h3>
+                    </div>
+                    <div class="gaming-content">
+                        <p>Procesador flagship con GPU dedicada y sistema de refrigeración líquida.</p>
+                        <div class="gaming-stats">
+                            <div class="stat">
+                                <span class="stat-number">144Hz</span>
+                                <span class="stat-label">Refresh Rate</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">16GB</span>
+                                <span class="stat-label">RAM LPDDR5X</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="performance-battery">
+                    <div class="battery-visual">
+                        <div class="battery-icon">
+                            <svg viewBox="0 0 100 50" class="battery-svg">
+                                <rect x="10" y="15" width="70" height="20" rx="3" fill="var(--color-secondary)"
+                                    opacity="0.2" />
+                                <rect x="10" y="15" width="56" height="20" rx="3" fill="var(--color-secondary)" />
+                                <rect x="80" y="20" width="5" height="10" rx="2" fill="var(--color-secondary)" />
+                                <text x="50" y="28" text-anchor="middle" fill="white" font-size="8"
+                                    font-weight="bold">7000mAh</text>
+                            </svg>
+                        </div>
+                        <div class="battery-info">
+                            <h4>Autonomía Épica</h4>
+                            <p>2 días de uso intensivo con carga rápida de 120W</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TARJETA PRECIO (Diseño compacto) -->
+        <div class="bento-item bento-price">
+            <div class="price-content">
+                <span class="category-tag price-tag">💰 VALOR</span>
+                <h3>Sweet Spot</h3>
+                <p>El equilibrio perfecto entre prestaciones y precio. Todo lo que necesitas sin pagar de más.</p>
+                <div class="price-badge">Desde 299€</div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN TECNOLOGÍA (Grid horizontal complejo) -->
+        <section class="bento-item bento-tech">
+            <div class="tech-grid">
+                <div class="tech-main">
+                    <span class="category-tag tech-tag">⚡ INNOVACIÓN</span>
+                    <h3>Tecnología del Futuro</h3>
+                    <p>Funciones que marcan la diferencia en tu día a día.</p>
+                </div>
+                <div class="tech-features">
+                    <div class="feature">
+                        <div class="feature-icon">🔒</div>
+                        <span>Biometría Avanzada</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📶</div>
+                        <span>5G Ultra Rápido</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🌟</div>
+                        <span>IA Integrada</span>
+                    </div>
+                </div>
+                <div class="tech-visual">
+                    <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=300&fit=crop"
+                        alt="Tecnología smartphone moderna">
+                </div>
+            </div>
+        </section>
+
+        <!-- TARJETA COMPACTO -->
+        <div class="bento-item bento-compact">
+            <div class="compact-content">
+                <span class="category-tag compact-tag">📱 PORTABILIDAD</span>
+                <h3>Tamaño Perfecto</h3>
+                <p>Potencia premium en formato compacto. Todo el rendimiento en la palma de tu mano.</p>
+                <div class="size-comparison">
+                    <div class="size-item">
+                        <strong>6.1"</strong>
+                        <span>Pantalla</span>
+                    </div>
+                    <div class="size-item">
+                        <strong>165g</strong>
+                        <span>Peso</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN MULTIMEDIA (Grid anidado visual) -->
+        <section class="bento-item bento-media">
+            <div class="media-grid">
+                <div class="media-content">
+                    <span class="category-tag media-tag">🎵 MULTIMEDIA</span>
+                    <h3>Experiencia Inmersiva</h3>
+                    <p>Audio espacial y pantalla OLED que transforman el entretenimiento móvil.</p>
+                    <div class="media-features">
+                        <span class="feature-pill">Dolby Atmos</span>
+                        <span class="feature-pill">HDR10+</span>
+                        <span class="feature-pill">120Hz LTPO</span>
+                    </div>
+                </div>
+                <div class="media-visual">
+                    <div class="screen-mockup">
+                        <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=300&h=500&fit=crop"
+                            alt="Pantalla smartphone con contenido multimedia">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA MEJORADO -->
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Diseño Bento 2024</h4>
+                <p>Un análisis interactivo de smartphones utilizando las últimas tecnologías web.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Tecnologías</h4>
+                <div class="tech-list">
+                    <span class="tech-badge">CSS Grid</span>
+                    <span class="tech-badge">Variables CSS</span>
+                    <span class="tech-badge">Media Queries</span>
+                    <span class="tech-badge">CSS Nesting</span>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Características</h4>
+                <ul class="feature-list">
+                    <li>🎨 Modo Claro/Oscuro</li>
+                    <li>📱 Diseño Responsivo</li>
+                    <li>⚡ Grid Anidado</li>
+                    <li>🎭 Animaciones CSS</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Análisis Smartphones - Diseñado con CSS Grid y mucho ☕</p>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

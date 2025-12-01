@@ -1,0 +1,249 @@
+/*
+        ===================================================================
+        GRID LAYOUT BENTO AVANZADO - CONFIGURACIÓN MÓVIL (< 700px)
+        Grid principal: 1 columna con elementos apilados
+        ===================================================================
+        */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+
+    /* Orden específico para móvil */
+    & > * {
+        min-height: 250px;
+    }
+
+    .bento-hero-camera {
+        grid-row: 1;
+    }
+
+    .bento-performance {
+        grid-row: 2;
+    }
+
+    .bento-price {
+        grid-row: 3;
+    }
+
+    .bento-tech {
+        grid-row: 4;
+    }
+
+    .bento-compact {
+        grid-row: 5;
+    }
+
+    .bento-media {
+        grid-row: 6;
+    }
+}
+
+/*
+        ===================================================================
+        GRID LAYOUT BENTO AVANZADO - CONFIGURACIÓN ESCRITORIO (≥ 700px)
+        Grid principal: 4 columnas con diseño complejo
+        Grids anidados: Cada sección principal tiene su propio grid interno
+        ===================================================================
+        */
+@media (min-width: 700px) {
+    .bento-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, minmax(200px, auto));
+        gap: var(--spacing-lg);
+        padding: var(--spacing-xl);
+
+        /* === HERO CAMERA: Ocupa 2 columnas x 2 filas === */
+        .bento-hero-camera {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+
+            .hero-grid {
+                display: grid;
+                grid-template-columns: 1.2fr 1fr;
+                grid-template-rows: 1fr auto;
+                gap: var(--spacing-lg);
+                height: 100%;
+
+                .hero-content {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / -1;
+                }
+
+                .hero-visual {
+                    grid-column: 2 / 3;
+                    grid-row: 1 / -1;
+                }
+
+                .specs-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: var(--spacing-sm);
+                    margin-top: var(--spacing-lg);
+
+                    .spec-highlight {
+                        grid-column: 1 / -1;
+                    }
+                }
+            }
+        }
+
+        /* === PERFORMANCE: Ocupa 1 columna x 2 filas === */
+        .bento-performance {
+            grid-column: 3 / 4;
+            grid-row: 1 / 3;
+
+            .performance-grid {
+                display: grid;
+                grid-template-rows: 1.5fr 1fr;
+                gap: var(--spacing-md);
+                height: 100%;
+
+                .performance-gaming {
+                    grid-row: 1 / 2;
+
+                    .gaming-stats {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: var(--spacing-sm);
+                        margin-top: var(--spacing-md);
+                    }
+                }
+
+                .performance-battery {
+                    grid-row: 2 / 3;
+                }
+            }
+        }
+
+        /* === PRICE: Ocupa 1 columna x 1 fila === */
+        .bento-price {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+
+        /* === TECH: Ocupa 2 columnas x 1 fila === */
+        .bento-tech {
+            grid-column: 1 / 3;
+            grid-row: 3 / 4;
+
+            .tech-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 0.8fr;
+                gap: var(--spacing-lg);
+                align-items: center;
+
+                .tech-main {
+                    grid-column: 1 / 2;
+                }
+
+                .tech-features {
+                    grid-column: 2 / 3;
+                    display: grid;
+                    gap: var(--spacing-sm);
+                }
+
+                .tech-visual {
+                    grid-column: 3 / 4;
+                }
+            }
+        }
+
+        /* === COMPACT: Ocupa 1 columna x 1 fila === */
+        .bento-compact {
+            grid-column: 3 / 4;
+            grid-row: 3 / 4;
+        }
+
+        /* === MEDIA: Ocupa 2 columnas x 1 fila === */
+        .bento-media {
+            grid-column: 1 / 4;
+            grid-row: 4 / 5;
+
+            .media-grid {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                gap: var(--spacing-xl);
+                align-items: center;
+                height: 100%;
+
+                .media-content {
+                    grid-column: 1 / 2;
+                }
+
+                .media-visual {
+                    grid-column: 2 / 3;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        /* === AJUSTE FINAL: La columna 4 para elementos restantes === */
+        .bento-price {
+            grid-row: 2 / 3;
+        }
+    }
+}
+
+/*
+        ===================================================================
+        GRID LAYOUT EXTRA LARGE (≥ 1200px)
+        Optimización para pantallas grandes
+        ===================================================================
+        */
+@media (min-width: 1200px) {
+    .bento-grid {
+        grid-template-columns: repeat(5, 1fr);
+        
+        /* Redistribución para pantallas grandes */
+        .bento-hero-camera {
+            grid-column: 1 / 3;
+            grid-row: 1 / 3;
+        }
+
+        .bento-performance {
+            grid-column: 3 / 4;
+            grid-row: 1 / 3;
+        }
+
+        .bento-price {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+
+        .bento-compact {
+            grid-column: 5 / 6;
+            grid-row: 1 / 2;
+        }
+
+        .bento-tech {
+            grid-column: 1 / 4;
+            grid-row: 3 / 4;
+        }
+
+        .bento-media {
+            grid-column: 4 / 6;
+            grid-row: 2 / 4;
+
+            .media-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr;
+
+                .media-content {
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+
+                .media-visual {
+                    grid-column: 1;
+                    grid-row: 2;
+                }
+            }
+        }
+    }
+}
