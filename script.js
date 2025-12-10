@@ -1,16 +1,15 @@
-// Obtener elementos del DOM
-const htmlElement = document.documentElement;
-const themeToggle = document.getElementById('theme-toggle');
-const sunIcon = document.getElementById('sun-icon');
-const moonIcon = document.getElementById('moon-icon');
-
 /**
  * Sistema avanzado de gestión de temas
  */
 class ThemeManager {
     constructor() {
-        this.currentTheme = this.getInitialTheme();
+        // Obtener elementos del DOM como propiedades de la instancia
+        this.htmlElement = document.documentElement;
+        this.themeToggle = document.getElementById('theme-toggle');
+        this.sunIcon = document.getElementById('sun-icon');
+        this.moonIcon = document.getElementById('moon-icon');
         this.mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        this.currentTheme = this.getInitialTheme();
         this.init();
     }
 
@@ -25,7 +24,9 @@ class ThemeManager {
         this.mediaQuery.addEventListener('change', this.handleSystemThemeChange.bind(this));
 
         // Configurar el botón de cambio de tema
-        themeToggle.addEventListener('click', this.toggleTheme.bind(this));
+        if (this.themeToggle) {
+            this.themeToggle.addEventListener('click', this.toggleTheme.bind(this));
+        }
 
         // Actualizar variables RGB
         this.updateRgbVariables();
@@ -52,11 +53,13 @@ class ThemeManager {
         const isDark = theme === 'dark';
 
         // Aplicar clase CSS
-        htmlElement.classList.toggle('dark-mode', isDark);
+        this.htmlElement.classList.toggle('dark-mode', isDark);
 
         // Actualizar iconos
-        sunIcon.classList.toggle('hidden', isDark);
-        moonIcon.classList.toggle('hidden', !isDark);
+        if (this.sunIcon && this.moonIcon) {
+            this.sunIcon.classList.toggle('hidden', isDark);
+            this.moonIcon.classList.toggle('hidden', !isDark);
+        }
 
         // Guardar preferencia
         localStorage.setItem('theme', theme);
@@ -93,7 +96,7 @@ class ThemeManager {
      * Actualiza las variables RGB para usar con rgba()
      */
     updateRgbVariables() {
-        const style = getComputedStyle(htmlElement);
+        const style = getComputedStyle(this.htmlElement);
 
         // Colores principales
         const colors = {
@@ -109,7 +112,7 @@ class ThemeManager {
         Object.entries(colors).forEach(([name, hex]) => {
             const rgb = this.hexToRgb(hex);
             if (rgb) {
-                htmlElement.style.setProperty(`--color-${name}-rgb`, rgb);
+                this.htmlElement.style.setProperty(`--color-${name}-rgb`, rgb);
             }
         });
     }
@@ -141,9 +144,9 @@ class ThemeManager {
      * Añade clase de transición temporal para suavizar cambios
      */
     addTransitionClass() {
-        htmlElement.classList.add('theme-transition');
+        this.htmlElement.classList.add('theme-transition');
         setTimeout(() => {
-            htmlElement.classList.remove('theme-transition');
+            this.htmlElement.classList.remove('theme-transition');
         }, 300);
     }
 
@@ -251,6 +254,7 @@ class AnimationManager {
 
 // Inicializar sistemas cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
+
     // Inicializar gestor de temas
     const themeManager = new ThemeManager();
 
@@ -274,7 +278,7 @@ style.textContent = `
             }
             
             .bento-item {
-                opacity: 0;
+                opacity: 100;
                 transform: translateY(30px);
                 transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             }

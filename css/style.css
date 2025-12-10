@@ -35,13 +35,13 @@ body {
     position: relative;
 
     &:hover {
-        /* transform: translateY(-4px); */
+        transform: translateY(-1px);
         box-shadow: var(--shadow-xl);
         border-color: var(--color-primary);
 
-        /* & img {
+        & img {
             transform: scale(1.05);
-        } */
+        }
     }
 
     /* Elementos comunes */
@@ -62,7 +62,9 @@ body {
         width: fit-content;
     }
 
-    h2, h3, h4 {
+    h2,
+    h3,
+    h4 {
         margin: 0 0 var(--spacing-md) 0;
         line-height: 1.2;
         font-weight: 700;
@@ -153,7 +155,8 @@ body {
                 background: var(--color-accent);
                 border-color: var(--color-accent);
 
-                strong, span {
+                strong,
+                span {
                     color: white;
                 }
             }
@@ -187,7 +190,7 @@ body {
    =================================================================== */
 .bento-performance {
     .gaming-tag {
-        /* background: rgba(var(--color-gaming), 0.1); */   
+        /* background: rgba(var(--color-gaming), 0.1); */
         color: var(--color-gaming);
         border-color: rgba(var(--color-gaming), 0.2);
     }
@@ -646,23 +649,7 @@ body {
         }
     }
 
-    /* Scroll Progress */
-    .scroll-progress {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: var(--border-color-light);
-        overflow: hidden;
 
-        .scroll-progress-bar {
-            height: 100%;
-            background: var(--gradient-primary);
-            width: 0%;
-            transition: width var(--transition-fast);
-        }
-    }
 }
 
 /* ===================================================================
