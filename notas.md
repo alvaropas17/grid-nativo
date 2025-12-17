@@ -1,0 +1,1 @@
+- El modo claro debe cambiar más, sobre todo los colores de fondo
