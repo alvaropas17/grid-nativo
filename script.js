@@ -242,12 +242,7 @@ class AnimationManager {
                 scrollProgressBar.style.width = `${Math.min(scrollProgress, 100)}%`;
             }
 
-            // Efectos parallax en imágenes
-            const parallaxItems = document.querySelectorAll('.hero-visual img, .screen-mockup img');
-            parallaxItems.forEach(item => {
-                const rate = scrolled * -0.2;
-                item.style.transform = `translate3d(0, ${rate}px, 0)`;
-            });
+            // Efectos parallax desactivados para evitar desplazamiento de imágenes
         });
     }
 }

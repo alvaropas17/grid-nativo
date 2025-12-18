@@ -1,20 +1,30 @@
 :root {
     /* Colores Base */
-    --color-primary: #3b82f6;        /* Blue 500 */
-    --color-secondary: #10b981;      /* Emerald 500 */
-    --color-accent: #f97316;         /* Orange 600 */
-    --color-gaming: #8b5cf6;         /* Purple 500 */
-    --color-tech: #06b6d4;           /* Cyan 500 */
-    --color-media: #ec4899;          /* Pink 500 */
-    --color-success: #22c55e;        /* Green 500 */
-    --color-warning: #eab308;        /* Yellow 500 */
+    --color-primary: #3b82f6;
+    /* Blue 500 */
+    --color-secondary: #10b981;
+    /* Emerald 500 */
+    --color-accent: #f97316;
+    /* Orange 600 */
+    --color-gaming: #8b5cf6;
+    /* Purple 500 */
+    --color-tech: #06b6d4;
+    /* Cyan 500 */
+    --color-media: #ec4899;
+    /* Pink 500 */
+    --color-success: #22c55e;
+    /* Green 500 */
+    --color-warning: #eab308;
+    /* Yellow 500 */
     --color-text-light: #f3f4f6;
-    --color-text-dark: #1f2937;
-    --color-text-muted: #6b7280;
-
-    /* Gradientes */
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --color-text-dark: #374151;
+    /* Más suave */
+    --color-text-muted: #9ca3af;
+    /* Más claro pmás suaves para modo claro */
+    --gradient-primary: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+    --gradient-secondary: linear-gradient(135deg, #fb7185 0%, #f472b6 100%);
+    --gradient-tech: linear-gradient(135deg, #22d3ee 0%, #38bdf8 100%);
+    --gradient-gaming: linear-gradient(135deg, #c4b5fd 0%, #fbbf2476c 100%);
     --gradient-tech: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     --gradient-gaming: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
 
@@ -25,7 +35,7 @@
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
     --spacing-2xl: 3rem;
-    
+
     /* Border radius */
     --radius-sm: 0.5rem;
     --radius-md: 1rem;
@@ -33,17 +43,24 @@
     --radius-xl: 2rem;
 
     /* Tema Claro (Default) */
-    --bg-body: #f8fafc;              /* Slate 50 */
-    --bg-card: #ffffff;              /* White */
-    --bg-card-hover: #f1f5f9;        /* Slate 100 */
-    --bg-card-secondary: #f8fafc;    /* Slate 50 */
-    --text-main: var(--color-text-dark);
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --border-color: #e2e8f0;         /* Slate 200 */
-    --border-color-light: #f1f5f9;   /* Slate 100 */
+    --bg-body: #ffffff;
+    /* Blanco puro para máxima luminosidad */
+    --bg-card: #ffffff;
+    /* White */
+    --bg-card-hover: #fafbfc;
+    /* Tinte muy suave */
+    --bg-card-secondary: #fdfdfe;
+    /* Casi blanco puro */
+    --text-main: #374151;
+    /* Gris más suave que el oscuro original */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    --border-color: #f0f1f3;
+    /* Bordes muy sutiles */
+    --border-color-light: #f7f8f9;
+    /* Casi imperceptible */
 
     /* Transiciones */
     --transition-fast: 0.15s ease-out;
